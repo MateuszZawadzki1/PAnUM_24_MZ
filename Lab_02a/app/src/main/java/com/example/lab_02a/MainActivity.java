@@ -31,27 +31,16 @@ public class MainActivity extends AppCompatActivity {
         String text = textViewArabic.getText().toString();
         String textR = textViewRoman.getText().toString();
 
-        // Buttons
-        if (view.getId() == R.id.Button_1)
-            text = text + "1";
-        if (view.getId() == R.id.Button_2)
-            text = text + "2";
-        if (view.getId() == R.id.Button_3)
-            text = text + "3";
-        if (view.getId() == R.id.Button_4)
-            text = text + "4";
-        if (view.getId() == R.id.Button_5)
-            text = text + "5";
-        if (view.getId() == R.id.Button_6)
-            text = text + "6";
-        if (view.getId() == R.id.Button_7)
-            text = text + "7";
-        if (view.getId() == R.id.Button_8)
-            text = text + "8";
-        if (view.getId() == R.id.Button_9)
-            text = text + "9";
-        if (view.getId() == R.id.Button_0)
-            text = text + "0";
+        if (view.getId() == R.id.Button_1) text += "1";
+        if (view.getId() == R.id.Button_2) text += "2";
+        if (view.getId() == R.id.Button_3) text += "3";
+        if (view.getId() == R.id.Button_4) text += "4";
+        if (view.getId() == R.id.Button_5) text += "5";
+        if (view.getId() == R.id.Button_6) text += "6";
+        if (view.getId() == R.id.Button_7) text += "7";
+        if (view.getId() == R.id.Button_8) text += "8";
+        if (view.getId() == R.id.Button_9) text += "9";
+        if (view.getId() == R.id.Button_0) text += "0";
         if (view.getId() == R.id.Button_CE) {
             text = "";
             textR = "";
@@ -62,6 +51,26 @@ public class MainActivity extends AppCompatActivity {
             if (!textR.isEmpty())
                 textR = textR.substring(0, textR.length() - 1);
         }
+
+        textViewArabic.setText(text);
+
+        if (!text.isEmpty()) {
+            Conventer conventer = new Conventer(text, this);
+            String roman = conventer.arabicToR();
+            if (roman != null) {
+                textViewRoman.setText(roman);
+            } else {
+                textViewRoman.setText("");
+            }
+        } else {
+            textViewRoman.setText("");
+        }
+    }
+
+    public void OnClickLettericButton(View view) {
+        TextView textViewRoman = findViewById(R.id.ScreenRoman);
+        TextView textViewArabic = findViewById(R.id.ScreenArabic);
+        String textR = textViewRoman.getText().toString();
 
         if (view.getId() == R.id.Button_M)
             textR = textR + "M";
@@ -77,14 +86,21 @@ public class MainActivity extends AppCompatActivity {
             textR = textR + "V";
         if (view.getId() == R.id.Button_X)
             textR = textR + "X";
+        if (view.getId() == R.id.Button_CE) {
+            textR = "";
+        }
+        if (view.getId() == R.id.Button_backspace)
+            if (!textR.isEmpty())
+                textR = textR.substring(0, textR.length() - 1);
 
-
-
-
-        textViewArabic.setText(text);
         textViewRoman.setText(textR);
 
-        Conventer conventer = new Conventer(text);
-        textViewRoman.setText(conventer.arabicToR());
+        Conventer conventer = new Conventer(textR, this);
+        int arabic = conventer.romanToArabic();
+        if (arabic != -1) {
+            textViewArabic.setText(String.valueOf(arabic));
+        } else {
+            textViewArabic.setText("");
+        }
     }
 }

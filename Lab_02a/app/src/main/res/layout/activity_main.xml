@@ -210,12 +210,30 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/Button_CE"
+            android:text="CE"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnClickLettericButton"
+            />
+
+        <Button
             android:id="@+id/Button_M"
             android:text="M"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
+            />
+
+        <Button
+            android:id="@+id/Button_backspace"
+            android:text="Back"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnClickLettericButton"
             />
 
     </LinearLayout>
@@ -232,7 +250,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
             />
 
         <Button
@@ -241,7 +259,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
             />
 
         <Button
@@ -250,7 +268,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
             />
 
     </LinearLayout>
@@ -267,7 +285,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
             />
 
         <Button
@@ -276,7 +294,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
             />
 
         <Button
@@ -285,7 +303,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="OnClickNumericButton"
+            android:onClick="OnClickLettericButton"
             />
     </LinearLayout>
 </LinearLayout>
