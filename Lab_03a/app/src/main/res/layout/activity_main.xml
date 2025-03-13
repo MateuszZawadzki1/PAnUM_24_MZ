@@ -1,93 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tempo(m/km): "
-            />
+            android:text="Tempo (min/km): " />
 
         <EditText
-            android:layout_marginLeft="20dp"
             android:id="@+id/Temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Wpisz swoje tempo"
-            android:layout_gravity="right"
-            />
-
+            android:hint="np. 5.5"
+            android:inputType="numberDecimal" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="left"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tempo(km/h): "
-            />
+            android:text="Własny dystans (km): " />
 
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="left">
-
-        <TextView
+        <EditText
+            android:id="@+id/distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Czas na przebiegniecie maratonu: "
-            />
-
+            android:hint="np. 10"
+            android:inputType="numberDecimal" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="left"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Czas na przebiegniecie polmaratonu: "
-            />
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Oblicz"
+        android:onClick="calculateFromPace" />
+
+    <TextView
+        android:id="@+id/speedResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prędkość: " />
+
+    <TextView
+        android:id="@+id/marathonResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maraton: " />
+
+    <TextView
+        android:id="@+id/halfMarathonResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Półmaraton: " />
+
+    <TextView
+        android:id="@+id/customDistanceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Własny dystans: " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="left"
-        >
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Czas na pokonanie wlasnego rekordu: "
-            />
+            android:text="Dystans (km): " />
+
+        <EditText
+            android:id="@+id/targetDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="np. 5"
+            android:inputType="numberDecimal" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Czas (min): " />
+
+        <EditText
+            android:id="@+id/targetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="np. 20"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calculatePaceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oblicz tempo"
+        android:onClick="calculatePace" />
+
+    <TextView
+        android:id="@+id/paceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wynikowe tempo: " />
 </LinearLayout>
