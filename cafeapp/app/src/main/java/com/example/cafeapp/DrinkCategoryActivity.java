@@ -15,6 +15,10 @@ public class DrinkCategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drink_category);
+        if (Drink.drinks == null || Drink.drinks.length == 0) {
+            throw new RuntimeException("Tablica Drink.drinks jest pusta!");
+        }
+
 
         ListView listDrinks = (ListView) findViewById(R.id.list_drinks);
 
