@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cafeapp</string>
+    <string name="logo">Logo</string>
+    <string-array name="options">
+        <item>Napoje</item>
+        <item>Przekaski</item>
+        <item>Kafeterie</item>
+    </string-array>
+</resources>
