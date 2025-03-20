@@ -2,6 +2,7 @@ package com.example.cafeapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -12,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,21 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this, DrinkCategoryActivity.class);
                             startActivity(intent);
                         }
+                        if (position == 1)
+                        {
+                            Intent intent = new Intent(MainActivity.this, SnacksCategoryActivity.class);
+                            startActivity(intent);
+                        }
+                        if (position == 2)
+                        {
+                            Intent intent = new Intent(MainActivity.this, CafesCategoryActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 };
         ListView listView = (ListView) findViewById(R.id.list_options);
         listView.setOnItemClickListener(itemClickListener);
+
     }
+
 }
