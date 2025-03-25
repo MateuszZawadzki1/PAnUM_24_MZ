@@ -6,15 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="16dp"
     tools:context=".MainActivity">
+
+    <include layout="@layout/toolbar"/>
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:src="@drawable/logo"
         android:contentDescription="@string/logo"
-
+        android:layout_margin="16dp"
         />
     
     <ListView
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/options"
+        android:layout_margin="16dp"
         />
 
 </LinearLayout>
