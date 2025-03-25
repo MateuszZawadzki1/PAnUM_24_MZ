@@ -21,29 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Dodanie aktywności DrinkCategoryActivity -->
-        <activity
-            android:name=".DrinkCategoryActivity"
-            android:exported="true" >
-        </activity>
-        <activity
-            android:name=".DrinkActivity"
-            android:exported="true" >
-        </activity>
-
-        <activity android:name=".SnacksCategoryActivity"
-            android:exported="true">
-        </activity>
-
-        <activity android:name=".SnackActivity"
-            android:exported="true">
-        </activity>
-
-        <activity android:name=".CafeActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".CafesCategoryActivity"
-            android:exported="true">
-        </activity>
+        
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".ItemActivity" />
     </application>
 
 </manifest>

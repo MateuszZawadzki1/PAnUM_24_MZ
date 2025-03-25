@@ -11,17 +11,6 @@ public class Snack {
         this.imageResourceId = imageResourceId;
     }
 
-    public static final Snack[] snacks;
-
-    static {
-        snacks = new Snack[]{
-                new Snack("Ciastko Owsiane", "Chrupiące ciastko z pełnoziarnistych płatków owsianych.", R.drawable.ciastkoowsiane),
-                new Snack("Miodownik", "Słodki przekładaniec z miodem i delikatnym kremem.", R.drawable.miodownik),
-                new Snack("Sernik Nowojorski", "Kremowy sernik o gęstej konsystencji i subtelnym smaku.", R.drawable.serniknowojorski),
-                new Snack("Brownie", "Wilgotne ciasto czekoladowe z intensywnym kakaowym aromatem.", R.drawable.brownie),
-        };
-    }
-
     public String getDescription() {
         return description;
     }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,30 +20,24 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AdapterView.OnItemClickListener itemClickListener =
-                new AdapterView.OnItemClickListener() {
-                    public void onItemClick(AdapterView<?> listView, View v, int position, long id)
-                    {
-                        if (position == 0)
-                        {
-                            Intent intent = new Intent(MainActivity.this, DrinkCategoryActivity.class);
-                            startActivity(intent);
-                        }
-                        if (position == 1)
-                        {
-                            Intent intent = new Intent(MainActivity.this, SnacksCategoryActivity.class);
-                            startActivity(intent);
-                        }
-                        if (position == 2)
-                        {
-                            Intent intent = new Intent(MainActivity.this, CafesCategoryActivity.class);
-                            startActivity(intent);
-                        }
-                    }
-                };
-        ListView listView = (ListView) findViewById(R.id.list_options);
-        listView.setOnItemClickListener(itemClickListener);
 
+        String[] options = {"Napoje", "Przekąski", "Kafeterie"};
+        ListView listView = findViewById(R.id.list_options);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, options);
+        listView.setAdapter(adapter);
+
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String category = options[position];
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("CATEGORY", category);
+                startActivity(intent);
+            }
+        };
+        listView.setOnItemClickListener(itemClickListener);
     }
 
 }

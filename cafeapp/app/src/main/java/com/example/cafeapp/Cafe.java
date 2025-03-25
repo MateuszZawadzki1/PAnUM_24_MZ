@@ -9,15 +9,6 @@ public class Cafe {
         this.imageResourceId = imageResourceId;
     }
 
-    public static final Cafe[] cafes;
-
-    static {
-        cafes = new Cafe[]{
-                new Cafe("Czestochowa", R.drawable.czestochowa),
-                new Cafe("Krakow", R.drawable.krakow),
-                new Cafe("Warszawa", R.drawable.warszawa),
-        };
-    }
 
     public String getName() {
         return name;
