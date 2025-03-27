@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class CoffeinaDatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "coffeina"; // Nazwa bazy danych
-    private static final int DB_VERSION = 1; // Numer wersji bazy danych
+    private static final int DB_VERSION = 2; // Numer wersji bazy danych
     CoffeinaDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }

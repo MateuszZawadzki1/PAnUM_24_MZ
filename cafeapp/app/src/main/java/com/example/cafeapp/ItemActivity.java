@@ -8,6 +8,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,7 @@ public class ItemActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.name);
         TextView description = findViewById(R.id.description);
         ImageView photo = findViewById(R.id.photo);
+        Button addToCartButton = findViewById(R.id.add_to_cart_button);
 
         CoffeinaDatabaseHelper dbHelper = new CoffeinaDatabaseHelper(this);
         try {
@@ -45,10 +48,17 @@ public class ItemActivity extends AppCompatActivity {
                 String descText = cursor.getString(1);
                 int imageResId = cursor.getInt(2);
 
+                Log.d("ItemActivity", "name: " + nameText + ", imageResId: " + imageResId);
+
                 name.setText(nameText);
                 description.setText(descText);
                 photo.setImageResource(imageResId);
                 photo.setContentDescription(nameText);
+
+                addToCartButton.setOnClickListener(v -> {
+                    Cart.addItem(new CartItem(nameText, imageResId));
+                    Toast.makeText(this, nameText + " dodano do koszyka", Toast.LENGTH_SHORT).show();
+                });
             }
         } catch (SQLiteException e) {
             Toast.makeText(this, "Baza danych niedostępna", Toast.LENGTH_SHORT).show();
