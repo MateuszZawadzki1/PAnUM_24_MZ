@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Converter App</string>
+
+    <string-array name="currencies">
+        <item>PLN</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>JPY</item>
+    </string-array>
+
+    <string-array name="length_units">
+        <item>mm</item>
+        <item>cm</item>
+        <item>cale</item>
+        <item>stopy</item>
+        <item>yardy</item>
+        <item>m</item>
+        <item>km</item>
+    </string-array>
+
+    <string-array name="area_units">
+        <item>mm2</item>
+        <item>cm2</item>
+        <item>m2</item>
+        <item>km2</item>
+        <item>ary</item>
+        <item>hektary</item>
+    </string-array>
+</resources>
